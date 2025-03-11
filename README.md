@@ -46,7 +46,7 @@ The ADF test confirmed that a one-time differencing (d = 1) was sufficient to ac
 
 ### Model Diagnostics
 
-<img src="images/diagonstic.png" style="width:50%;" />
+<img src="images/residual.png" style="width:70%;" />
 
 The diagnostic plots indicate that the model performs well:
 
