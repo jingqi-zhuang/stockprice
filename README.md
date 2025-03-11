@@ -1,6 +1,6 @@
 # Manulife's Daily Stock Price Forecasting
 
-<img src="images/manulife.png" style="zoom:50%;" />
+<img src="images/manulife.png" style="width:40%;" />
 
 I developed an **ARIMA time series model** to forecast Manulife’s daily stock price, utilizing historical data up to the most recent trading day.
 
@@ -10,7 +10,8 @@ Driven by my strong interest in the financial services industry, I chose Manulif
 
 Using API integration, I extracted daily adjusted stock prices from January 1, 2023, to February 21, 2025, enabling real-time data retrieval for automated forecasting. The stock price has exhibited an upward trend since 2023.
 
-![](/Users/apple/Desktop/stockprice/images/stockprice.png)
+<img src="images/stockprice.png" style="width:50%;" />
+
 
 ## Step 2: Data Preprocessing
 
@@ -18,11 +19,11 @@ Using API integration, I extracted daily adjusted stock prices from January 1, 2
 
 The **12-day rolling mean** was selected to analyze stock price trends while reducing noise, smoothing out daily fluctuations while retaining meaningful short-term patterns. The analysis confirmed a **non-stationary** trend, which was further validated by the **Augmented Dickey-Fuller (ADF) test**.
 
-![](/Users/apple/Desktop/stockprice/images/rolling.png)
+<img src="images/rolling.png" style="width:40%;" />
 
 To address this, I applied a **log transformation** to stabilize the variance and eliminate the trend. After transformation, the **12-day moving average** indicates improved stationarity.
 
-![Moving Average](/Users/apple/Desktop/stockprice/images/moving avg.png)
+<img src="images/moving avg.png" style="width:40%;" />
 
 ### Train Test Split
 
@@ -31,7 +32,7 @@ The dataset was split into:
 - **Training set:** 2023-01-01 to 2024-12-31
 - **Testing set:** 2025
 
-![](/Users/apple/Desktop/stockprice/images/train test.png)
+<img src="images/train test.png" style="width:60%;" />
 
 ## Step 3: ARIMA Model Fitting
 
@@ -45,7 +46,7 @@ The ADF test confirmed that a one-time differencing (d = 1) was sufficient to ac
 
 ### Model Diagnostics
 
-![](/Users/apple/Desktop/stockprice/images/diagonastic.png)
+<img src="images/diagonstic.png" style="width:50%;" />
 
 The diagnostic plots indicate that the model performs well:
 
@@ -61,11 +62,11 @@ Using the ARIMA(0,1,2) model, I implemented a rolling forecast with a 95% confid
 
 The forecasting results are shown below:
 
-![](/Users/apple/Desktop/stockprice/images/forecast.png)
+<img src="images/forecast.png" style="width:60%;" />
 
 The detailed forecasted stock prices starting from 2025 are as follows:
 
-![](/Users/apple/Desktop/stockprice/images/forecast_details.png)
+<img src="images/forecast_details.png" style="width:60%;" />
 
 The model achieved a Mean Absolute Error (MAE) of 0.35, indicating a relatively small deviation between predicted and actual stock prices.
 
